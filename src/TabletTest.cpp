@@ -123,6 +123,17 @@ RTC::ReturnCode_t TabletTest::onExecute(RTC::UniqueId ec_id)
 		m_positionIn.read();
 		std::cout << "position is: " << m_position.data.x << ", " << m_position.data.y << std::endl;
 	}
+
+	if(m_pressureIn.isNew()){
+		m_pressureIn.read();
+		std::cout << "pressure is" << m_pressure.data << std::endl;
+	}
+
+	if(m_orientationIn.isNew()){
+		m_orientationIn.read();
+		std::cout << "orientation is " << m_orientation.data.x << ", " << m_orientation.data.y << std::endl;
+	}
+
 	return RTC::RTC_OK;
 }
 
